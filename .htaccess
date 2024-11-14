@@ -1,0 +1,10 @@
+
+DirectoryIndex index.php
+
+# Configura la reescritura de URLs
+RewriteEngine On
+
+# Redirige todo el tráfico al archivo index.php para un manejo centralizado de rutas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
